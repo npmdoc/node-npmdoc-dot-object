@@ -1,0 +1,594 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/rhalff/dot-object#readme"
+
+    >dot-object (v1.5.4)</a>
+</h1>
+<h4>dot-object makes it possible to transform and read (JSON) objects using dot notation.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dot-object">module dot-object</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.dot-object">
+            function <span class="apidocSignatureSpan"></span>dot-object
+            <span class="apidocSignatureSpan">(seperator, override, useArray)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object._process">
+            function <span class="apidocSignatureSpan">dot-object.</span>_process
+            <span class="apidocSignatureSpan">(v, mod)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.copy">
+            function <span class="apidocSignatureSpan">dot-object.</span>copy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.del">
+            function <span class="apidocSignatureSpan">dot-object.</span>del
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.dot">
+            function <span class="apidocSignatureSpan">dot-object.</span>dot
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.move">
+            function <span class="apidocSignatureSpan">dot-object.</span>move
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.object">
+            function <span class="apidocSignatureSpan">dot-object.</span>object
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.pick">
+            function <span class="apidocSignatureSpan">dot-object.</span>pick
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.remove">
+            function <span class="apidocSignatureSpan">dot-object.</span>remove
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.set">
+            function <span class="apidocSignatureSpan">dot-object.</span>set
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.str">
+            function <span class="apidocSignatureSpan">dot-object.</span>str
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.transfer">
+            function <span class="apidocSignatureSpan">dot-object.</span>transfer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dot-object.transform">
+            function <span class="apidocSignatureSpan">dot-object.</span>transform
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dot-object" id="apidoc.module.dot-object">module dot-object</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.dot-object" id="apidoc.element.dot-object.dot-object">
+        function <span class="apidocSignatureSpan"></span>dot-object
+        <span class="apidocSignatureSpan">(seperator, override, useArray)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DotObject(seperator, override, useArray) {
+  if (!(this instanceof DotObject)) {
+    return new DotObject(seperator, override, useArray)
+  }
+
+  if (typeof seperator === &#x27;undefined&#x27;) seperator = &#x27;.&#x27;
+  if (typeof override === &#x27;undefined&#x27;) override = false
+  if (typeof useArray === &#x27;undefined&#x27;) useArray = true
+  this.seperator = seperator
+  this.override = override
+  this.useArray = useArray
+
+  // contains touched arrays
+  this.cleanup = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object._process" id="apidoc.element.dot-object._process">
+        function <span class="apidocSignatureSpan">dot-object.</span>_process
+        <span class="apidocSignatureSpan">(v, mod)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _process(v, mod) {
+  var i
+  var r
+
+  if (typeof mod === &#x27;function&#x27;) {
+    r = mod(v)
+    if (r !== undefined) {
+      v = r
+    }
+  } else if (Array.isArray(mod)) {
+    for (i = 0; i &#x3c; mod.length; i++) {
+      r = mod[i](v)
+      if (r !== undefined) {
+        v = r
+      }
+    }
+  }
+
+  return v
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.copy" id="apidoc.element.dot-object.copy">
+        function <span class="apidocSignatureSpan">dot-object.</span>copy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copy = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    version: 6
+  }
+}
+};
+
+var tgt = {name: &#x27;Brandon&#x27;};
+
+dot.<span class="apidocCodeKeywordSpan">copy</span>(&#x27;stuff.phone&#x27;, &#x27;wanna.haves.phone&#x27;, src, tgt);
+
+console.log(tgt);
+
+{
+name: &#x27;Brandon&#x27;,
+wanna: {
+  haves: {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.del" id="apidoc.element.dot-object.del">
+        function <span class="apidocSignatureSpan">dot-object.</span>del
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Pick &#x26; Remove the value
+val = dot.pick(&#x27;some.nested.value&#x27;, obj, true);
+
+// shorthand
+val = dot.remove(&#x27;some.nested.value&#x27;, obj);
+
+// or use the alias `del`
+val = dot.<span class="apidocCodeKeywordSpan">del</span>(&#x27;some.nested.value&#x27;, obj);
+
+```
+
+### Using modifiers
+
+You can use modifiers to translate values on the fly.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.dot" id="apidoc.element.dot-object.dot">
+        function <span class="apidocSignatureSpan">dot-object.</span>dot
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dot = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var obj = {
+  id: &#x27;my-id&#x27;,
+  nes: { ted: { value: true } },
+  other: { nested: { stuff: 5 } },
+  some: { array: [&#x27;A&#x27;, &#x27;B&#x27;] }
+};
+
+var tgt = dot.<span class="apidocCodeKeywordSpan">dot</span>(obj);
+
+// or
+
+var tgt = {};
+dot.dot(obj, tgt);
+
+console.log(tgt);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.move" id="apidoc.element.dot-object.move">
+        function <span class="apidocSignatureSpan">dot-object.</span>move
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">move = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var dot = require(&#x27;dot-object&#x27;);
+
+var obj = {
+&#x27;first_name&#x27;: &#x27;John&#x27;,
+&#x27;last_name&#x27;: &#x27;Doe&#x27;
+};
+
+dot.<span class="apidocCodeKeywordSpan">move</span>(&#x27;first_name&#x27;, &#x27;contact.firstname&#x27;, obj);
+dot.move(&#x27;last_name&#x27;, &#x27;contact.lastname&#x27;, obj);
+
+console.log(obj);
+
+{
+contact: {
+  firstname: &#x27;John&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.object" id="apidoc.element.dot-object.object">
+        function <span class="apidocSignatureSpan">dot-object.</span>object
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">object = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+&#x27;contact.info.about.me&#x27;: &#x27;classified&#x27;,
+&#x27;devices[0]&#x27;: &#x27;mobile&#x27;,
+&#x27;devices[1]&#x27;: &#x27;laptop&#x27;,
+&#x27;some.other.things.0&#x27;: &#x27;this&#x27;,
+&#x27;some.other.things.1&#x27;: &#x27;that&#x27;
+};
+
+dot.<span class="apidocCodeKeywordSpan">object</span>(row);
+
+console.log(row);
+
+{
+&#x22;id&#x22;: 2,
+&#x22;contact&#x22;: {
+  &#x22;name&#x22;: {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.pick" id="apidoc.element.dot-object.pick">
+        function <span class="apidocSignatureSpan">dot-object.</span>pick
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pick = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ some: {
+   nested: {
+     value: &#x27;Hi there!&#x27;
+   }
+ }
+};
+
+var val = dot.<span class="apidocCodeKeywordSpan">pick</span>(&#x27;some.nested.value&#x27;, obj);
+console.log(val);
+
+Hi there!
+
+// Pick &#x26; Remove the value
+val = dot.pick(&#x27;some.nested.value&#x27;, obj, true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.remove" id="apidoc.element.dot-object.remove">
+        function <span class="apidocSignatureSpan">dot-object.</span>remove
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Hi there!
+
+// Pick &#x26; Remove the value
+val = dot.pick(&#x27;some.nested.value&#x27;, obj, true);
+
+// shorthand
+val = dot.<span class="apidocCodeKeywordSpan">remove</span>(&#x27;some.nested.value&#x27;, obj);
+
+// or use the alias `del`
+val = dot.del(&#x27;some.nested.value&#x27;, obj);
+
+```
+
+### Using modifiers
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.set" id="apidoc.element.dot-object.set">
+        function <span class="apidocSignatureSpan">dot-object.</span>set
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var root
+  if (this.cleanup.length) {
+    for (i = 0; i &#x3c; this.cleanup.length; i++) {
+      keys = this.cleanup[i].split(&#x27;.&#x27;)
+      root = keys.splice(0, -1).join(&#x27;.&#x27;)
+      ret = root ? this.pick(root, obj) : obj
+      ret = ret[keys[0]].filter(function (v) { return v !== undefined })
+      this.<span class="apidocCodeKeywordSpan">set</span>(this.cleanup[i], ret, obj)
+    }
+    this.cleanup = []
+  }
+}
+
+// alias method
+DotObject.prototype.del = DotObject.prototype.remove
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.str" id="apidoc.element.dot-object.str">
+        function <span class="apidocSignatureSpan">dot-object.</span>str
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">str = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+To convert manually per string use:
+```javascript
+var dot = require(&#x27;dot-object&#x27;);
+
+var tgt = { val: &#x27;test&#x27; };
+dot.<span class="apidocCodeKeywordSpan">str</span>(&#x27;this.is.my.string&#x27;, &#x27;value&#x27;, tgt);
+
+console.log(tgt);
+
+{
+&#x22;val&#x22;: &#x22;test&#x22;,
+&#x22;this&#x22;: {
+  &#x22;is&#x22;: {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.transfer" id="apidoc.element.dot-object.transfer">
+        function <span class="apidocSignatureSpan">dot-object.</span>transfer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transfer = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+#### Transfer property from one object to another
+
+Does the same as copy but removes the value from the source object:
+
+```javascript
+dot.<span class="apidocCodeKeywordSpan">transfer</span>(&#x27;stuff.phone&#x27;, &#x27;wanna.haves.phone&#x27;, src, tgt);
+
+// src: {&#x22;name&#x22;:&#x22;John&#x22;,&#x22;stuff&#x22;:{}}
+// tgt: {&#x22;name&#x22;:&#x22;Brandon&#x22;,&#x22;wanna&#x22;:{&#x22;haves&#x22;:{&#x22;phone&#x22;:{&#x22;brand&#x22;:&#x22;iphone
+&#x22;,&#x22;version&#x22;:6}}}
+```
+
+
+#### Expand to an object
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dot-object.transform" id="apidoc.element.dot-object.transform">
+        function <span class="apidocSignatureSpan">dot-object.</span>transform
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transform = function () {
+  return dotDefault[method].apply(dotDefault, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  &#x27;id&#x27;: &#x27;nr&#x27;,
+  &#x27;contact.firstName&#x27;: &#x27;name.first&#x27;,
+  &#x27;contact.lastName&#x27;: &#x27;name.last&#x27;,
+  &#x27;contact.email&#x27;: &#x27;email&#x27;
+};
+
+var tgt = {}
+dot.<span class="apidocCodeKeywordSpan">transform</span>(recipe, source, tgt);
+
+// OR
+
+var tgt = dot.transform(recipe, source);
+
+console.log(tgt);
+{
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
